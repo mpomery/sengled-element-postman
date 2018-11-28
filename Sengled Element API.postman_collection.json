@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "789ac44d-843e-47ae-a25e-4d80bd174063",
+		"name": "Sengled Element API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "DeviceSetGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cmdId\": 128,\n    \"deviceUuidList\": [\n        {\n            \"deviceUuid\": \"B0CE181403000000\"\n        },\n        {\n            \"deviceUuid\": \"B0CE181403000000\"\n        }\n    ],\n    \"value\": 0\n}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/device/deviceSetGroup.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"device",
+								"deviceSetGroup.json"
+							]
+						},
+						"description": "Device ID's don't need to be in the same room\n\ncmdId:\n127 - Adjust Brightness\n128 - Turn on and off\n\nvalue: \nOnOff: 0 is off, 1 is on\nBrightness: 0 off, 255 max"
+					},
+					"response": []
+				},
+				{
+					"name": "DeviceSetBrightness",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceUuid\": \"B0CE181403000000\",\n    \"brightness\": \"255\"\n}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/device/deviceSetBrightness.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"device",
+								"deviceSetBrightness.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeviceSetOnOff",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deviceUuid\": \"B0CE181403000000\",\n    \"onoff\": \"0\"\n}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/device/deviceSetOnOff.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"device",
+								"deviceSetOnOff.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSpecialDeviceList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/device/getSpecialDeviceList.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"device",
+								"getSpecialDeviceList.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDeviceInfos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/device/getDeviceInfos.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"device",
+								"getDeviceInfos.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "GetUserRoomDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID={{jsessionid}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/room/getUserRoomsDetail.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"room",
+								"getUserRoomsDetail.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ApplyRoom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"type": "text",
+								"value": "JSESSIONID={{jsessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brightness\": 0,\n    \"colortemperature\": 0,\n    \"deviceList\": [\n        {\n            \"deviceUuid\": \"B0CE181403000000\",\n            \"gatewayUuid\": \"B0:CE:18:00:00:00\"\n        }\n    ],\n    \"onoff\": 0,\n    \"rgbColorB\": 255,\n    \"rgbColorG\": 255,\n    \"rgbColorR\": 144,\n    \"roomId\": 0\n}"
+						},
+						"url": {
+							"raw": "https://element.cloud.sengled.com/zigbee/room/applyRoom.json",
+							"protocol": "https",
+							"host": [
+								"element",
+								"cloud",
+								"sengled",
+								"com"
+							],
+							"path": [
+								"zigbee",
+								"room",
+								"applyRoom.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "19a0c74b-2881-44cf-bd0d-0adef2b228ff",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"jsessionid\", jsonData.jsessionid);\r",
+							"pm.environment.set(\"appServerAddr\", jsonData.appServerAddr);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"os_type\": \"android\",\r\n\t\"pwd\": \"{{password}}\",\r\n\t\"user\": \"{{username}}\",\r\n\t\"uuid\": \"xxxxxx\"\r\n}"
+				},
+				"url": {
+					"raw": "https://element.cloud.sengled.com/zigbee/customer/login.json",
+					"protocol": "https",
+					"host": [
+						"element",
+						"cloud",
+						"sengled",
+						"com"
+					],
+					"path": [
+						"zigbee",
+						"customer",
+						"login.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1826c537-6f40-4389-b5a2-9e54b18c0760",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4a383939-4c73-401d-a136-46daa8c0c6ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "42e465c8-cc80-4223-87d3-2531ac4ea343",
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "f094d4d1-9879-4972-9664-30ddeee39765",
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
